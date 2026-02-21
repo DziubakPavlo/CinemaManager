@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="CinemaManager.Common/CinemaManager.Common.csproj" />
+  <Project Path="CinemaManager.ConsoleApp/CinemaManager.ConsoleApp.csproj" />
+  <Project Path="CinemaManager.DBModels/CinemaManager.DBModels.csproj" />
+  <Project Path="CinemaManager.Services/CinemaManager.Services.csproj" />
+  <Project Path="CinemaManager.ViewModels/CinemaManager.ViewModels.csproj" />
+  <Project Path="CinemaManager/CinemaManager.csproj" Id="a715a790-064a-48fd-84df-8d77aa3df00c" />
+</Solution>
