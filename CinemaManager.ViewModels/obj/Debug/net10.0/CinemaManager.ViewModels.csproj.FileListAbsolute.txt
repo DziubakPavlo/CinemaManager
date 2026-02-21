@@ -1,0 +1,17 @@
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.ViewModels.deps.json
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.ViewModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.ViewModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.DBModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.DBModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\bin\Debug\net10.0\CinemaManager.Common.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.csproj.AssemblyReference.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.AssemblyInfoInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.AssemblyInfo.cs
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaMa.CEF12E58.Up2Date
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\refint\CinemaManager.ViewModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\ref\CinemaManager.ViewModels.dll

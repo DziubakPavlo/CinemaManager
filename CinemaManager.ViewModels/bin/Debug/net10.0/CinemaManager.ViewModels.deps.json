@@ -1,0 +1,55 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "CinemaManager.ViewModels/1.0.0": {
+        "dependencies": {
+          "CinemaManager.DBModels": "1.0.0"
+        },
+        "runtime": {
+          "CinemaManager.ViewModels.dll": {}
+        }
+      },
+      "CinemaManager.Common/1.0.0": {
+        "runtime": {
+          "CinemaManager.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CinemaManager.DBModels/1.0.0": {
+        "dependencies": {
+          "CinemaManager.Common": "1.0.0"
+        },
+        "runtime": {
+          "CinemaManager.DBModels.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CinemaManager.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CinemaManager.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CinemaManager.DBModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

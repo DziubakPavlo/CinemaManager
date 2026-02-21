@@ -1,0 +1,17 @@
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.Services.deps.json
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.Services.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.Services.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.DBModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.DBModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\bin\Debug\net10.0\CinemaManager.Common.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.csproj.AssemblyReference.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.AssemblyInfoInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.AssemblyInfo.cs
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.csproj.CoreCompileInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaMa.77065A03.Up2Date
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\refint\CinemaManager.Services.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\CinemaManager.Services.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Services\obj\Debug\net10.0\ref\CinemaManager.Services.dll

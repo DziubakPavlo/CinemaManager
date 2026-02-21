@@ -1,0 +1,11 @@
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\bin\Debug\net10.0\CinemaManager.Common.deps.json
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\bin\Debug\net10.0\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\bin\Debug\net10.0\CinemaManager.Common.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.AssemblyInfoInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.AssemblyInfo.cs
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.csproj.CoreCompileInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\refint\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\CinemaManager.Common.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.Common\obj\Debug\net10.0\ref\CinemaManager.Common.dll

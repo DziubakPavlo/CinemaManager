@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaManager.DBModels\CinemaManager.DBModels.csproj" />
+    <ProjectReference Include="..\CinemaManager.Services\CinemaManager.Services.csproj" />
+    <ProjectReference Include="..\CinemaManager.ViewModels\CinemaManager.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
