@@ -3,6 +3,7 @@ using CinemaManager.DBModels;
 
 namespace CinemaManager.ViewModels
 {
+    //ViewModel for movie session, used to display session information in the UI
     public class MovieSessionViewModel
     {
         private readonly MovieSessionDBModel _data;

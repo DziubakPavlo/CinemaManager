@@ -7,9 +7,11 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Main window constructor
         public MainWindow()
         {
             InitializeComponent();
+            //Navigate to the HallsPage on startup
             MainFrame.Navigate(new HallsPage());
         }
     }

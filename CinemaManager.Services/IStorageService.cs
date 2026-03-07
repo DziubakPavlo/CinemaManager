@@ -5,6 +5,7 @@ using System.Text;
 
 namespace CinemaManager.Services
 {
+    //Interface for storage service
     public interface IStorageService
     {
         IEnumerable<CinemaHallDBModel> GetAllHalls();

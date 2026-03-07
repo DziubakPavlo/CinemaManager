@@ -8,9 +8,11 @@ namespace CinemaManager.ConsoleApp
     class Program
     {
         private static IStorageService _storageService;
+        //Entry to console program
         static void Main()
         {
             Console.WriteLine("Welcome to the Cinema Manager!");
+            //Connecting storage services
             _storageService = new StorageService();
             while (true)
             {
@@ -22,6 +24,7 @@ namespace CinemaManager.ConsoleApp
                 Console.Write("Please select an option: ");
                 var choice = Console.ReadLine();
 
+                //Choice of called function
                 switch (choice)
                 {
                     case "1":
@@ -45,6 +48,7 @@ namespace CinemaManager.ConsoleApp
             }
         }
 
+        //Function to show all halls
         private static void ShowHalls()
         {
             foreach (var hall in _storageService.GetAllHalls())
@@ -54,6 +58,7 @@ namespace CinemaManager.ConsoleApp
             }
         }
 
+        //Function to show sessions in certain hall
         private static void ShowSessions()
         {
             Console.Write("Enter hall name to show sessions: ");
@@ -61,12 +66,14 @@ namespace CinemaManager.ConsoleApp
 
             var sessions = _storageService.GetSessions(hallName);
 
+            //Check if there is no sessions
             if (!sessions.Any())
             {
                 Console.WriteLine("Sessions not found");
                 return;
             }
 
+            //Output of sessions
             foreach (var session in sessions)
             {
                 var sessionViewModel = new MovieSessionViewModel(session);
@@ -74,6 +81,7 @@ namespace CinemaManager.ConsoleApp
             }
         }
 
+        //Function to add a hall
         static void AddHall()
         {
             Console.WriteLine("Hall Name: ");
@@ -91,6 +99,7 @@ namespace CinemaManager.ConsoleApp
             Console.WriteLine("Hall added successfully.");
         }
 
+        //Function to add a session
         static void AddSession()
         {
             Console.WriteLine("Hall Name: ");

@@ -15,3 +15,4 @@ C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\refint\CinemaManager.ViewModels.dll
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.pdb
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\ref\CinemaManager.ViewModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ViewModels\obj\Debug\net10.0\CinemaManager.ViewModels.sourcelink.json

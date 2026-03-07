@@ -11,6 +11,7 @@ namespace CinemaManager.UI.WPF
     {
         public static IServiceProvider ServiceProvider { get; private set; }
 
+        //Configure services and build the service provider
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

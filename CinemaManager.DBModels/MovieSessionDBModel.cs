@@ -1,5 +1,6 @@
 ﻿namespace CinemaManager.DBModels
 {
+    // Database model for movie session
     public class MovieSessionDBModel
     {
         public Guid Id { get; }
@@ -10,6 +11,7 @@
         public DateTime StartTime { get; }
         public int DurationMinutes { get; }
 
+        //DB model initializer
         public MovieSessionDBModel(Guid hallId, string title, Common.Enums.MovieGenre genre, int releaseYear, DateTime startTime, int durationMinutes)
         {
             Id = Guid.NewGuid();

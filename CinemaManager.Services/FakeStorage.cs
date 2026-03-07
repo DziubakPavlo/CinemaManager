@@ -3,16 +3,19 @@ using CinemaManager.DBModels;
 
 namespace CinemaManager.Services
 {
+    //Fake storage for halls and sessions
     internal static class FakeStorage
     {
         private static readonly List<CinemaHallDBModel> _halls;
         private static readonly List<MovieSessionDBModel> _sessions;
 
+        //Halls getter
         internal static IEnumerable<CinemaHallDBModel> Halls
         {
             get { return _halls.ToList(); } 
         }
 
+        //Sessions getter
         internal static IEnumerable<MovieSessionDBModel> Sessions
         {
             get { return _sessions.ToList(); }
@@ -20,12 +23,14 @@ namespace CinemaManager.Services
 
         static FakeStorage()
         {
+            //Creating list of halls
             var hall1 = new CinemaHallDBModel("Hall 1", 120, HallType.IMAX);
             var hall2 = new CinemaHallDBModel("Hall 2", 80, HallType.ThreeD);
             var hall3 = new CinemaHallDBModel("Hall 3", 100, HallType.TwoD);
 
             _halls = new List<CinemaHallDBModel> { hall1, hall2, hall3 };
 
+            //Creating list of sessions
             _sessions = new List<MovieSessionDBModel>
             {
                 new MovieSessionDBModel(hall1.Id, "Inception", MovieGenre.ScienceFiction, 2010, DateTime.Now.AddHours(1), 148),

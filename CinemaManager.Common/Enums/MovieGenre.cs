@@ -1,5 +1,6 @@
 ﻿namespace CinemaManager.Common.Enums
 {
+    //Genres of movies
     public enum MovieGenre
     {
         Animation,

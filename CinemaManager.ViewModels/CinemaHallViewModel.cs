@@ -3,6 +3,7 @@ using CinemaManager.DBModels;
 
 namespace CinemaManager.ViewModels
 {
+    //ViewModel for cinema hall, used to display hall information in the UI
     public class CinemaHallViewModel
     {
         private readonly CinemaHallDBModel _data;

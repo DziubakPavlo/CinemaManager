@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using CinemaManager.DBModels;
+using CinemaManager.ViewModels;
 
 namespace CinemaManager.UI.WPF
 {
@@ -9,21 +10,20 @@ namespace CinemaManager.UI.WPF
     public partial class SessionDetailsPage : Page
     {
         private readonly MovieSessionDBModel _session;
+        private readonly MovieSessionViewModel _viewModel;
 
+        //Page constructor
         public SessionDetailsPage(MovieSessionDBModel session)
         {
             InitializeComponent();
             _session = session;
+            _viewModel = new MovieSessionViewModel(session);
 
-            SessionInfo.Text =
-                $"Фільм: {_session.Title}\n" +
-                $"Жанр: {_session.Genre}\n" +
-                $"Рік: {_session.ReleaseYear}\n" +
-                $"Початок: {_session.StartTime}\n" +
-                $"Тривалість: {_session.DurationMinutes} хв\n" +
-                $"Кінець: {_session.StartTime.AddMinutes(_session.DurationMinutes)}";
+            //Output session details in the UI
+            SessionInfo.Text = _viewModel.ToString();
         }
 
+        //Handle Back button click to navigate back to the previous page
         private void Back_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             NavigationService.GoBack();
