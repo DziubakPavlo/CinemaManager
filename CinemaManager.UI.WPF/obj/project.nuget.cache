@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9YqCe6lRBDk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dzuba\\source\\repos\\CinemaManager\\CinemaManager.UI.WPF\\CinemaManager.UI.WPF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dzuba\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.3\\microsoft.extensions.dependencyinjection.10.0.3.nupkg.sha512",
+    "C:\\Users\\dzuba\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.3\\microsoft.extensions.dependencyinjection.abstractions.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

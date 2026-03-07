@@ -22,3 +22,4 @@ C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ConsoleApp\obj\Debug\net
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ConsoleApp\obj\Debug\net10.0\CinemaManager.ConsoleApp.pdb
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ConsoleApp\obj\Debug\net10.0\CinemaManager.ConsoleApp.genruntimeconfig.cache
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ConsoleApp\obj\Debug\net10.0\ref\CinemaManager.ConsoleApp.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.ConsoleApp\obj\Debug\net10.0\CinemaManager.ConsoleApp.sourcelink.json

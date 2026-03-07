@@ -1,0 +1,31 @@
+﻿<Page x:Class="CinemaManager.UI.WPF.AddSessionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Додати сеанс">
+    <StackPanel Margin="10">
+        <TextBlock Text="Додати новий сеанс" FontSize="20" Margin="5"/>
+        <TextBlock Text="Назва фільму:" Margin="5"/>
+        <TextBox x:Name="MovieTitleBox" Margin="5"/>
+        <TextBlock Text="Жанр:" Margin="5"/>
+        <ComboBox x:Name="GenreBox" Margin="5">
+            <ComboBoxItem Content="Animation"/>
+            <ComboBoxItem Content="Horror"/>
+            <ComboBoxItem Content="Comedy"/>
+            <ComboBoxItem Content="Action"/>
+            <ComboBoxItem Content="Science Fiction"/>
+            <ComboBoxItem Content="Drama"/>
+            <ComboBoxItem Content="Fantasy"/>
+            <ComboBoxItem Content="Thriller"/>
+            <ComboBoxItem Content="Romance"/>
+            <ComboBoxItem Content="Documentary"/>
+        </ComboBox>
+        <TextBlock Text="Рік випуску:" Margin="5"/>
+        <TextBox x:Name="YearBox" Margin="5"/>
+        <TextBlock Text="Час початку (yyyy-MM-dd HH:mm):" Margin="5"/>
+        <TextBox x:Name="StartBox" Margin="5"/>
+        <TextBlock Text="Тривалість (хв):" Margin="5"/>
+        <TextBox x:Name="DurationBox" Margin="5"/>
+        <Button Content="Зберегти" Margin="5" Click="Save_Click"/>
+        <Button Content="Назад" Margin="5" Click="Back_Click"/>
+    </StackPanel>
+</Page>

@@ -1,28 +1,29 @@
 ﻿using CinemaManager.DBModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace CinemaManager.Services
 {
     public class StorageService : IStorageService
     {
-        private List<CinemaHallDBModel> _halls;
-        private List<MovieSessionDBModel> _sessions;
+        private ObservableCollection<CinemaHallDBModel> _halls;
+        private ObservableCollection<MovieSessionDBModel> _sessions;
 
         private void LoadData()
         {
             if (_halls != null && _sessions != null)
                 return;
 
-            _halls = FakeStorage.Halls.ToList();
-            _sessions = FakeStorage.Sessions.ToList();
+            _halls = new ObservableCollection<CinemaHallDBModel>(FakeStorage.Halls);
+            _sessions = new ObservableCollection<MovieSessionDBModel>(FakeStorage.Sessions);
         }
 
         public IEnumerable<CinemaHallDBModel> GetAllHalls()
         {
             LoadData();
-            return _halls.ToList();
+            return _halls;
         }
 
         public IEnumerable<MovieSessionDBModel> GetSessions(string hallName)
@@ -32,7 +33,7 @@ namespace CinemaManager.Services
             if (hall == null)
                 return Enumerable.Empty<MovieSessionDBModel>();
 
-            return _sessions.Where(s => s.HallId == hall.Id).ToList();
+            return _sessions.Where(s => s.HallId == hall.Id);
         }
 
         public void AddHall(CinemaHallDBModel hall)

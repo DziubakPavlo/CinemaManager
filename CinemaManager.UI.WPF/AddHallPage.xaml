@@ -1,0 +1,20 @@
+﻿<Page x:Class="CinemaManager.UI.WPF.AddHallPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Додати зал">
+    <StackPanel Margin="10">
+        <TextBlock Text="Додати новий зал" FontSize="20" Margin="5"/>
+        <TextBlock Text="Назва залу:" Margin="5"/>
+        <TextBox x:Name="HallNameBox" Margin="5"/>
+        <TextBlock Text="Кількість місць:" Margin="5"/>
+        <TextBox x:Name="SeatCountBox" Margin="5"/>
+        <TextBlock Text="Тип залу:" Margin="5"/>
+        <ComboBox x:Name="HallTypeBox" Margin="5">
+            <ComboBoxItem Content="TwoD"/>
+            <ComboBoxItem Content="ThreeD"/>
+            <ComboBoxItem Content="IMAX"/>
+        </ComboBox>
+        <Button Content="Зберегти" Margin="5" Click="Save_Click"/>
+        <Button Content="Назад" Margin="5" Click="Back_Click"/>
+    </StackPanel>
+</Page>
