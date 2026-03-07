@@ -92,7 +92,7 @@ namespace CinemaManager.UI.WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CinemaManager.UI.WPF;component/addsessionpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CinemaManager.UI.WPF;V1.0.0.0;component/addsessionpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AddSessionPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

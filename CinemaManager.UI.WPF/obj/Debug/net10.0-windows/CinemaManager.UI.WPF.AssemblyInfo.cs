@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaManager.UI.WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ef21af50d64dc265a6c588d97b7a59b9c6027dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3085a2cc0e1389a6c15e409bbc48227a7d7ed131")]
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaManager.UI.WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaManager.UI.WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
