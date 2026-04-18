@@ -1,146 +1,192 @@
 ﻿using CinemaManager.Common.Enums;
-using CinemaManager.DBModels;
+using CinemaManager.Repositories;
 using CinemaManager.Services;
-using CinemaManager.ViewModels;
+using CinemaManager.Storage;
 
 namespace CinemaManager.ConsoleApp
 {
     class Program
     {
-        private static IStorageService _storageService;
-        //Entry to console program
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Cinema Manager!");
-            //Connecting storage services
-            _storageService = new StorageService();
+            IStorageContext storage = new InMemoryStorageContext();
+
+            IHallRepository hallRepository = new HallRepository(storage);
+            ISessionRepository sessionRepository = new SessionRepository(storage);
+
+            IHallService hallService = new HallService(hallRepository);
+            ISessionService sessionService = new SessionService(sessionRepository, hallRepository);
+
             while (true)
             {
-                Console.WriteLine("\n1. Show cinema halls");
-                Console.WriteLine("2. Show movie sessions");
-                Console.WriteLine("3. Add a new cinema hall");
-                Console.WriteLine("4. Add a new movie session");
-                Console.WriteLine("0. Exit\n");
-                Console.Write("Please select an option: ");
-                var choice = Console.ReadLine();
+                Console.WriteLine("\n1 - Show halls");
+                Console.WriteLine("2 - Create hall");
+                Console.WriteLine("3 - Show sessions");
+                Console.WriteLine("4 - Create session");
+                Console.WriteLine("0 - Exit");
 
-                //Choice of called function
-                switch (choice)
+                var input = Console.ReadLine();
+
+                switch (input)
                 {
                     case "1":
-                        ShowHalls();
+                        ShowHalls(hallService);
                         break;
+
                     case "2":
-                        ShowSessions();
+                        CreateHall(hallService);
                         break;
+
                     case "3":
-                        AddHall();
+                        ShowSessions(sessionService);
                         break;
+
                     case "4":
-                        AddSession();
+                        CreateSession(sessionService);
                         break;
+
                     case "0":
                         return;
+
                     default:
-                        Console.WriteLine("Invalid option, please try again.");
+                        Console.WriteLine("Invalid option");
                         break;
                 }
             }
         }
 
-        //Function to show all halls
-        private static void ShowHalls()
+        static void ShowHalls(IHallService hallService)
         {
-            foreach (var hall in _storageService.GetAllHalls())
+            var halls = hallService.GetAllHalls();
+
+            foreach (var hall in halls)
             {
-                var hallViewModel = new CinemaHallViewModel(hall);
-                Console.WriteLine(hallViewModel);
+                Console.WriteLine($"{hall.Id} | {hall.Name} | Seats: {hall.SeatCount}");
             }
         }
 
-        //Function to show sessions in certain hall
-        private static void ShowSessions()
+        static void CreateHall(IHallService hallService)
         {
-            Console.Write("Enter hall name to show sessions: ");
-            string hallName = Console.ReadLine();
-
-            var sessions = _storageService.GetSessions(hallName);
-
-            //Check if there is no sessions
-            if (!sessions.Any())
+            Console.Write("Enter hall name: ");
+            var name = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(name))
             {
-                Console.WriteLine("Sessions not found");
+                Console.WriteLine("Name cannot be empty");
                 return;
             }
 
-            //Output of sessions
-            foreach (var session in sessions)
+            Console.Write("Enter seat count: ");
+            if (!int.TryParse(Console.ReadLine(), out int seats))
             {
-                var sessionViewModel = new MovieSessionViewModel(session);
-                Console.WriteLine(sessionViewModel);
-            }
-        }
-
-        //Function to add a hall
-        static void AddHall()
-        {
-            Console.WriteLine("Hall Name: ");
-            string name = Console.ReadLine();
-
-            Console.WriteLine("Seat Count: ");
-            int seatCount = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Hall type (0 - 2D, 1 - 3D, 2 - IMAX): ");
-            HallType type = (HallType)int.Parse(Console.ReadLine());
-
-            var hall = new CinemaHallDBModel(name, seatCount, type);
-            _storageService.AddHall(hall);
-
-            Console.WriteLine("Hall added successfully.");
-        }
-
-        //Function to add a session
-        static void AddSession()
-        {
-            Console.WriteLine("Hall Name: ");
-            string hallName = Console.ReadLine();
-
-            var hall = _storageService.GetHallByName(hallName);
-            if (hall == null)
-            {
-                Console.WriteLine("Hall not found");
+                Console.WriteLine("Invalid number");
                 return;
             }
 
-            Console.WriteLine("Movie Title: ");
-            string title = Console.ReadLine();
+            Console.WriteLine("Select hall type:");
+            foreach (var t in Enum.GetValues(typeof(HallType)))
+            {
+                Console.WriteLine($"{(int)t} - {t}");
+            }
 
-            Console.WriteLine("Genre: ");
-            Console.WriteLine("0 - Animation");
-            Console.WriteLine("1 - Horror");
-            Console.WriteLine("2 - Comedy");
-            Console.WriteLine("3 - Action");
-            Console.WriteLine("4 - Science Fiction");
-            Console.WriteLine("5 - Drama");
-            Console.WriteLine("6 - Fantasy");
-            Console.WriteLine("7 - Thriller");
-            Console.WriteLine("8 - Romance");
-            Console.WriteLine("9 - Documentary");
-            MovieGenre genre = (MovieGenre)int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int typeInput) ||
+                !Enum.IsDefined(typeof(HallType), typeInput))
+            {
+                Console.WriteLine("Invalid type");
+                return;
+            }
 
-            Console.WriteLine("Release Year: ");
-            int releaseYear = int.Parse(Console.ReadLine());
+            var type = (HallType)typeInput;
 
-            Console.WriteLine("Start Time (yyyy-MM-dd HH:mm): ");
-            DateTime startTime = DateTime.ParseExact(Console.ReadLine(), "yyyy-MM-dd HH:mm", null);
+            try
+            {
+                hallService.CreateHall(name, seats, type);
+                Console.WriteLine("Hall created!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
-            Console.WriteLine("Duration (minutes): ");
-            int durationMinutes = int.Parse(Console.ReadLine());
+        static void ShowSessions(ISessionService sessionService)
+        {
+            var sessions = sessionService.GetAllSessions();
 
-            var session = new MovieSessionDBModel(hall.Id, title, genre, releaseYear, startTime, durationMinutes);
-            _storageService.AddSession(session);
+            foreach (var s in sessions)
+            {
+                Console.WriteLine($"{s.Id} | Movie: {s.Title} | HallId: {s.HallId} | {s.StartTime}");
+            }
+        }
 
-            Console.WriteLine("Session added successfully.");
+        static void CreateSession(ISessionService sessionService)
+        {
+            Console.Write("Enter hall Id: ");
+            if (!Guid.TryParse(Console.ReadLine(), out Guid hallId))
+            {
+                Console.WriteLine("Invalid Guid");
+                return;
+            }
+
+            Console.Write("Enter movie title: ");
+            var title = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                Console.WriteLine("Title cannot be empty");
+                return;
+            }
+
+            Console.WriteLine("Select genre:");
+            foreach (var g in Enum.GetValues(typeof(MovieGenre)))
+            {
+                Console.WriteLine($"{(int)g} - {g}");
+            }
+
+            if (!int.TryParse(Console.ReadLine(), out int genreInput) ||
+                !Enum.IsDefined(typeof(MovieGenre), genreInput))
+            {
+                Console.WriteLine("Invalid genre");
+                return;
+            }
+
+            var genre = (MovieGenre)genreInput;
+
+            Console.Write("Enter release year: ");
+            if (!int.TryParse(Console.ReadLine(), out int year))
+            {
+                Console.WriteLine("Invalid year");
+                return;
+            }
+
+            Console.Write("Enter duration (minutes): ");
+            if (!int.TryParse(Console.ReadLine(), out int duration))
+            {
+                Console.WriteLine("Invalid duration");
+                return;
+            }
+
+            Console.Write("Enter start time (yyyy-MM-dd HH:mm): ");
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime startTime))
+            {
+                Console.WriteLine("Invalid date");
+                return;
+            }
+
+            try
+            {
+                sessionService.CreateSession(
+                    hallId,
+                    title,
+                    genre,
+                    year,
+                    startTime,
+                    duration);
+
+                Console.WriteLine("Session created!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

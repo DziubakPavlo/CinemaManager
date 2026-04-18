@@ -25,10 +25,8 @@ C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Common.dll
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.DBModels.dll
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Services.dll
-C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.ViewModels.dll
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.DBModels.pdb
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Services.pdb
-C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.ViewModels.pdb
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Common.pdb
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0-windows\CinemaMa.C5F2A828.Up2Date
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0-windows\CinemaManager.UI.WPF.dll
@@ -40,3 +38,9 @@ C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0-windows\AddSessionPage.baml
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0-windows\AddHallPage.g.cs
 C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\obj\Debug\net10.0-windows\AddSessionPage.g.cs
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.DTOModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Repositories.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Storage.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.DTOModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Repositories.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.UI.WPF\bin\Debug\net10.0-windows\CinemaManager.Storage.pdb

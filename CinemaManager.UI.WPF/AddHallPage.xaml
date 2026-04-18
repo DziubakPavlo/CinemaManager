@@ -9,11 +9,7 @@
         <TextBlock Text="Кількість місць:" Margin="5"/>
         <TextBox x:Name="SeatCountBox" Margin="5"/>
         <TextBlock Text="Тип залу:" Margin="5"/>
-        <ComboBox x:Name="HallTypeBox" Margin="5">
-            <ComboBoxItem Content="TwoD"/>
-            <ComboBoxItem Content="ThreeD"/>
-            <ComboBoxItem Content="IMAX"/>
-        </ComboBox>
+        <ComboBox x:Name="HallTypeBox" Margin="5"/>
         <Button Content="Зберегти" Margin="5" Click="Save_Click"/>
         <Button Content="Назад" Margin="5" Click="Back_Click"/>
     </StackPanel>

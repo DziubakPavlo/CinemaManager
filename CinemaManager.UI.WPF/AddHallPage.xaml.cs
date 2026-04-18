@@ -1,8 +1,7 @@
 ﻿using System.Windows.Controls;
-using Microsoft.Extensions.DependencyInjection;
 using CinemaManager.Services;
-using CinemaManager.DBModels;
 using CinemaManager.Common.Enums;
+using System.Windows;
 
 namespace CinemaManager.UI.WPF
 {
@@ -11,13 +10,15 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class AddHallPage : Page
     {
-        private readonly IStorageService _storageService;
+        private readonly IHallService _hallService;
 
         //Page constructor
-        public AddHallPage()
+        public AddHallPage(IHallService hallService)
         {
             InitializeComponent();
-            _storageService = App.ServiceProvider.GetService<IStorageService>();
+            _hallService = hallService;
+
+            HallTypeBox.ItemsSource = Enum.GetValues(typeof(HallType));
         }
 
         //Save button click handler
@@ -25,14 +26,31 @@ namespace CinemaManager.UI.WPF
         {
             //Get hall details from input fields
             string name = HallNameBox.Text;
-            int seats = int.Parse(SeatCountBox.Text);
-            HallType type = (HallType)HallTypeBox.SelectedIndex;
 
-            //Create new hall model and save to storage
-            var hall = new CinemaHallDBModel(name, seats, type);
-            _storageService.AddHall(hall);
+            if (!int.TryParse(SeatCountBox.Text, out int seats))
+            {
+                MessageBox.Show("Please enter a valid number of seats.");
+                return;
+            }
 
-            NavigationService.GoBack();
+            if (HallTypeBox.SelectedItem is not HallType type)
+            {
+                MessageBox.Show("Please select a hall type.");
+                return;
+            }
+
+            //Create new hall through the service and handle any exceptions
+            try
+            {
+                _hallService.CreateHall(name, seats, type);
+
+                MessageBox.Show("Hall created successfully!");
+                NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Back button click handler

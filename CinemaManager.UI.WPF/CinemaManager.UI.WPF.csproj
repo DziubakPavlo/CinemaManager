@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CinemaManager.DBModels\CinemaManager.DBModels.csproj" />
     <ProjectReference Include="..\CinemaManager.Services\CinemaManager.Services.csproj" />
-    <ProjectReference Include="..\CinemaManager.ViewModels\CinemaManager.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

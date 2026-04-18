@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "CinemaManager.DTOModels/1.0.0": {
+        "dependencies": {
+          "CinemaManager.Common": "1.0.0"
+        },
+        "runtime": {
+          "CinemaManager.DTOModels.dll": {}
+        }
+      },
+      "CinemaManager.Common/1.0.0": {
+        "runtime": {
+          "CinemaManager.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CinemaManager.DTOModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CinemaManager.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -5,7 +5,18 @@
     <StackPanel>
         <TextBlock x:Name="HallName" FontSize="20" Margin="10"/>
         <TextBlock Text="Список сеансів" FontSize="16" Margin="10"/>
-        <ListBox x:Name="SessionsList" DisplayMemberPath="Title" Margin="10" MouseDoubleClick="SessionsList_MouseDoubleClick"/>
+        <ListBox x:Name="SessionsList"  Margin="10" MouseDoubleClick="SessionsList_MouseDoubleClick">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Genre}"/>
+                        <TextBlock Text="{Binding StartTime}"/>
+                        <TextBlock Text="{Binding DurationMinutes}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button Content="Додати" Margin="10" Click="Add_Click"/>
         <Button Content="Назад" Margin="10" Click="Back_Click"/>
     </StackPanel>

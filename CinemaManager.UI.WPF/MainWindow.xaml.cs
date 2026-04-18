@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Windows;
 
 namespace CinemaManager.UI.WPF
 {
@@ -7,12 +8,22 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IServiceProvider _serviceProvider;
+
         //Main window constructor
-        public MainWindow()
+        public MainWindow(IServiceProvider serviceProvider)
         {
             InitializeComponent();
+            _serviceProvider = serviceProvider;
+
             //Navigate to the HallsPage on startup
-            MainFrame.Navigate(new HallsPage());
+            NavigateToHalls();
+        }
+
+        private void NavigateToHalls()
+        {
+            var hallsPage = _serviceProvider.GetRequiredService<HallsPage>();
+            MainFrame.Navigate(hallsPage);
         }
     }
 }

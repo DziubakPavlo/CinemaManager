@@ -1,0 +1,16 @@
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\bin\Debug\net10.0\CinemaManager.DTOModels.deps.json
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\bin\Debug\net10.0\CinemaManager.DTOModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\bin\Debug\net10.0\CinemaManager.DTOModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\bin\Debug\net10.0\CinemaManager.Common.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\bin\Debug\net10.0\CinemaManager.Common.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.csproj.AssemblyReference.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.AssemblyInfoInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.AssemblyInfo.cs
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.csproj.CoreCompileInputs.cache
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.sourcelink.json
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaMa.B8F09BF3.Up2Date
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\refint\CinemaManager.DTOModels.dll
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\CinemaManager.DTOModels.pdb
+C:\Users\dzuba\source\repos\CinemaManager\CinemaManager.DTOModels\obj\Debug\net10.0\ref\CinemaManager.DTOModels.dll

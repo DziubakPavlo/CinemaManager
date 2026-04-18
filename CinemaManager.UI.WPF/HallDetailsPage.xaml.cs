@@ -2,8 +2,8 @@
 using System.Windows.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using CinemaManager.Services;
-using CinemaManager.DBModels;
-using CinemaManager.ViewModels;
+using CinemaManager.DTOModels.Halls;
+using CinemaManager.DTOModels.Sessions;
 
 namespace CinemaManager.UI.WPF
 {
@@ -12,49 +12,58 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class HallDetailsPage : Page
     {
-        private readonly IStorageService _storageService;
-        private readonly CinemaHallDBModel _hall;
-        private readonly CinemaHallViewModel _hallViewModel;
+        private readonly ISessionService _sessionService;
+        private readonly IServiceProvider _serviceProvider;
+
+        private HallDetailsDTO _hall = null!;
 
         //Page constructor
-        public HallDetailsPage(CinemaHallDBModel hall)
+        public HallDetailsPage(ISessionService sessionService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _storageService = App.ServiceProvider.GetService<IStorageService>();
-            _hall = hall;
-            _hallViewModel = new CinemaHallViewModel(hall);
 
-            //Set hall details in the UI
-            HallName.Text = _hallViewModel.ToString();
-            SessionsList.ItemsSource = _storageService.GetSessions(_hall.Name);
-
-            //Refresh sessions list when page is loaded
-            this.Loaded += HallDetailsPage_Loaded;
+            _sessionService = sessionService;
+            _serviceProvider = serviceProvider;
         }
 
-        //Load sessions for the hall when page is loaded
-        private void HallDetailsPage_Loaded(object sender, RoutedEventArgs e)
+        public void SetHall(HallDetailsDTO hall)
         {
-            SessionsList.ItemsSource = _storageService.GetSessions(_hall.Name);
+            _hall = hall;
+
+            HallName.Text = $"{hall.Name} ({hall.Type}) - {hall.SeatCount} місць";
+
+            this.Loaded += (s, e) => LoadSessions();
+        }
+
+        private void LoadSessions()
+        {
+            var sessions = _sessionService.GetAllSessions()
+                .Where(s => s.HallId == _hall.Id);
+
+            SessionsList.ItemsSource = sessions;
         }
 
         //Handle double-click on a session to navigate to its details page
         private void SessionsList_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (SessionsList.SelectedItem is MovieSessionDBModel session)
+            if (SessionsList.SelectedItem is SessionDetailsDTO session)
             {
-                NavigationService.Navigate(new SessionDetailsPage(session));
+                var page = _serviceProvider.GetRequiredService<SessionDetailsPage>();
+                page.SetSession(session);
+                NavigationService.Navigate(page);
             }
         }
 
         //Handle Add button click to navigate to the AddSessionPage
-        private void Add_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddSessionPage(_hall));
+            var page = _serviceProvider.GetRequiredService<AddSessionPage>();
+            page.SetHall(_hall);
+            NavigationService.Navigate(page);
         }
 
         //Handle Back button click to navigate back to the previous page
-        private void Back_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

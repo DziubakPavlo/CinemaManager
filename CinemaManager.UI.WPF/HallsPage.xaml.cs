@@ -1,7 +1,8 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Navigation;
 using Microsoft.Extensions.DependencyInjection;
 using CinemaManager.Services;
-using CinemaManager.DBModels;
+using CinemaManager.DTOModels.Halls;
 
 namespace CinemaManager.UI.WPF
 {
@@ -10,29 +11,41 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class HallsPage : Page
     {
-        private readonly IStorageService _storageService;
+        private readonly IHallService _hallService;
+        private readonly IServiceProvider _serviceProvider;
 
         //Page constructor
-        public HallsPage()
+        public HallsPage(IHallService hallService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _storageService = App.ServiceProvider.GetService<IStorageService>();
-            HallsList.ItemsSource = _storageService.GetAllHalls();
+            _hallService = hallService;
+            _serviceProvider = serviceProvider;
+
+            this.Loaded += (s, e) => LoadHalls();
+        }
+
+        //Load halls from the service and bind to the list
+        private void LoadHalls()
+        {
+            HallsList.ItemsSource = _hallService.GetAllHalls();
         }
 
         //Handle double-click on a hall to navigate to its details page
         private void HallsList_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (HallsList.SelectedItem is CinemaHallDBModel hall)
+            if (HallsList.SelectedItem is HallDetailsDTO hall)
             {
-                NavigationService.Navigate(new HallDetailsPage(hall));
+                var page = _serviceProvider.GetRequiredService<HallDetailsPage>();
+                page.SetHall(hall);
+                NavigationService.Navigate(page);
             }
         }
 
         //Handle click on the "Add" button to navigate to the page for adding a new hall
         private void Add_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddHallPage());
+            var page = _serviceProvider.GetRequiredService<AddHallPage>();
+            NavigationService.Navigate(page);
         }
     }
 }

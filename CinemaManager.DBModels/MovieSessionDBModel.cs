@@ -8,13 +8,17 @@
         public string Title { get; }
         public Common.Enums.MovieGenre Genre { get; }
         public int ReleaseYear { get; }
-        public DateTime StartTime { get; }
+        public DateTime StartTime { get; set; }
         public int DurationMinutes { get; }
 
         //DB model initializer
-        public MovieSessionDBModel(Guid hallId, string title, Common.Enums.MovieGenre genre, int releaseYear, DateTime startTime, int durationMinutes)
+        public MovieSessionDBModel(Guid hallId, string title, Common.Enums.MovieGenre genre, int releaseYear, DateTime startTime, int durationMinutes) : this(Guid.NewGuid(), hallId, title, genre, releaseYear, startTime, durationMinutes)
         {
-            Id = Guid.NewGuid();
+        }
+
+        public MovieSessionDBModel(Guid id, Guid hallId, string title, Common.Enums.MovieGenre genre, int releaseYear, DateTime startTime, int durationMinutes)
+        {
+            Id = id;
             HallId = hallId;
             Title = title;
             Genre = genre;

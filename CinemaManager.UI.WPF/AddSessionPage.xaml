@@ -7,18 +7,7 @@
         <TextBlock Text="Назва фільму:" Margin="5"/>
         <TextBox x:Name="MovieTitleBox" Margin="5"/>
         <TextBlock Text="Жанр:" Margin="5"/>
-        <ComboBox x:Name="GenreBox" Margin="5">
-            <ComboBoxItem Content="Animation"/>
-            <ComboBoxItem Content="Horror"/>
-            <ComboBoxItem Content="Comedy"/>
-            <ComboBoxItem Content="Action"/>
-            <ComboBoxItem Content="Science Fiction"/>
-            <ComboBoxItem Content="Drama"/>
-            <ComboBoxItem Content="Fantasy"/>
-            <ComboBoxItem Content="Thriller"/>
-            <ComboBoxItem Content="Romance"/>
-            <ComboBoxItem Content="Documentary"/>
-        </ComboBox>
+        <ComboBox x:Name="GenreBox" Margin="5"/>
         <TextBlock Text="Рік випуску:" Margin="5"/>
         <TextBox x:Name="YearBox" Margin="5"/>
         <TextBlock Text="Час початку (yyyy-MM-dd HH:mm):" Margin="5"/>

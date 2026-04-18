@@ -60,11 +60,40 @@
           "bin/placeholder/CinemaManager.DBModels.dll": {}
         }
       },
+      "CinemaManager.DTOModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CinemaManager.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CinemaManager.DTOModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaManager.DTOModels.dll": {}
+        }
+      },
+      "CinemaManager.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CinemaManager.DBModels": "1.0.0",
+          "CinemaManager.Storage": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CinemaManager.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaManager.Repositories.dll": {}
+        }
+      },
       "CinemaManager.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "CinemaManager.DBModels": "1.0.0"
+          "CinemaManager.DBModels": "1.0.0",
+          "CinemaManager.DTOModels": "1.0.0",
+          "CinemaManager.Repositories": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CinemaManager.Services.dll": {}
@@ -73,17 +102,17 @@
           "bin/placeholder/CinemaManager.Services.dll": {}
         }
       },
-      "CinemaManager.ViewModels/1.0.0": {
+      "CinemaManager.Storage/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "CinemaManager.DBModels": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/CinemaManager.ViewModels.dll": {}
+          "bin/placeholder/CinemaManager.Storage.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CinemaManager.ViewModels.dll": {}
+          "bin/placeholder/CinemaManager.Storage.dll": {}
         }
       }
     }
@@ -161,22 +190,31 @@
       "path": "../CinemaManager.DBModels/CinemaManager.DBModels.csproj",
       "msbuildProject": "../CinemaManager.DBModels/CinemaManager.DBModels.csproj"
     },
+    "CinemaManager.DTOModels/1.0.0": {
+      "type": "project",
+      "path": "../CinemaManager.DTOModels/CinemaManager.DTOModels.csproj",
+      "msbuildProject": "../CinemaManager.DTOModels/CinemaManager.DTOModels.csproj"
+    },
+    "CinemaManager.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Cinemamanager.Repositories/CinemaManager.Repositories.csproj",
+      "msbuildProject": "../Cinemamanager.Repositories/CinemaManager.Repositories.csproj"
+    },
     "CinemaManager.Services/1.0.0": {
       "type": "project",
       "path": "../CinemaManager.Services/CinemaManager.Services.csproj",
       "msbuildProject": "../CinemaManager.Services/CinemaManager.Services.csproj"
     },
-    "CinemaManager.ViewModels/1.0.0": {
+    "CinemaManager.Storage/1.0.0": {
       "type": "project",
-      "path": "../CinemaManager.ViewModels/CinemaManager.ViewModels.csproj",
-      "msbuildProject": "../CinemaManager.ViewModels/CinemaManager.ViewModels.csproj"
+      "path": "../CinemaManager.Storage/CinemaManager.Storage.csproj",
+      "msbuildProject": "../CinemaManager.Storage/CinemaManager.Storage.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0-windows7.0": [
       "CinemaManager.DBModels >= 1.0.0",
       "CinemaManager.Services >= 1.0.0",
-      "CinemaManager.ViewModels >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 10.0.3"
     ]
   },
@@ -217,9 +255,6 @@
             },
             "C:\\Users\\dzuba\\source\\repos\\CinemaManager\\CinemaManager.Services\\CinemaManager.Services.csproj": {
               "projectPath": "C:\\Users\\dzuba\\source\\repos\\CinemaManager\\CinemaManager.Services\\CinemaManager.Services.csproj"
-            },
-            "C:\\Users\\dzuba\\source\\repos\\CinemaManager\\CinemaManager.ViewModels\\CinemaManager.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\dzuba\\source\\repos\\CinemaManager\\CinemaManager.ViewModels\\CinemaManager.ViewModels.csproj"
             }
           }
         }
@@ -234,7 +269,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net10.0-windows7.0": {
@@ -264,7 +299,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

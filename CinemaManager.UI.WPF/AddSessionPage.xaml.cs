@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
-using Microsoft.Extensions.DependencyInjection;
 using CinemaManager.Services;
-using CinemaManager.DBModels;
 using CinemaManager.Common.Enums;
+using CinemaManager.DTOModels.Halls;
+using System.Windows;
 
 namespace CinemaManager.UI.WPF
 {
@@ -11,32 +11,74 @@ namespace CinemaManager.UI.WPF
     /// </summary>
     public partial class AddSessionPage : Page
     {
-        private readonly IStorageService _storageService;
-        private readonly CinemaHallDBModel _hall;
+        private readonly ISessionService _sessionService;
+
+        private HallDetailsDTO _hall = null!;
 
         //Page constructor
-        public AddSessionPage(CinemaHallDBModel hall)
+        public AddSessionPage(ISessionService sessionService)
         {
             InitializeComponent();
-            _storageService = App.ServiceProvider.GetService<IStorageService>();
+            
+            _sessionService = sessionService;
+
+            GenreBox.ItemsSource = Enum.GetValues(typeof(MovieGenre));
+        }
+
+        public void SetHall(HallDetailsDTO hall)
+        {
             _hall = hall;
         }
 
         //Save button click event handler
         private void Save_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            //Validate hall information
+            if (_hall == null)
+            {
+                MessageBox.Show("Hall information is missing.");
+                return;
+            }
+
             //Get input values
             string title = MovieTitleBox.Text;
-            MovieGenre genre = (MovieGenre)GenreBox.SelectedIndex;
-            int year = int.Parse(YearBox.Text);
-            DateTime start = DateTime.Parse(StartBox.Text);
-            int duration = int.Parse(DurationBox.Text);
+
+            if (GenreBox.SelectedItem is not MovieGenre genre)
+            {
+                MessageBox.Show("Please select a movie genre.");
+                return;
+            }
+
+            if (!int.TryParse(YearBox.Text, out int year))
+            {
+                MessageBox.Show("Please enter a valid release year.");
+                return;
+            }
+
+            if (!DateTime.TryParse(StartBox.Text, out DateTime start))
+            {
+                MessageBox.Show("Please enter a valid start time.");
+                return;
+            }
+
+            if (!int.TryParse(DurationBox.Text, out int duration))
+            {
+                MessageBox.Show("Please enter a valid duration in minutes.");
+                return;
+            }
 
             //Create new session and save to storage
-            var session = new MovieSessionDBModel(_hall.Id, title, genre, year, start, duration);
-            _storageService.AddSession(session);
+            try
+            {
+                _sessionService.CreateSession(_hall.Id, title, genre, year, start, duration);
 
-            NavigationService.GoBack();
+                MessageBox.Show("Session added successfully.");
+                NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Back button click event handler

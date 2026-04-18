@@ -10,7 +10,6 @@
         "dependencies": {
           "CinemaManager.DBModels": "1.0.0",
           "CinemaManager.Services": "1.0.0",
-          "CinemaManager.ViewModels": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "10.0.3"
         },
         "runtime": {
@@ -55,9 +54,34 @@
           }
         }
       },
+      "CinemaManager.DTOModels/1.0.0": {
+        "dependencies": {
+          "CinemaManager.Common": "1.0.0"
+        },
+        "runtime": {
+          "CinemaManager.DTOModels.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CinemaManager.Repositories/1.0.0": {
+        "dependencies": {
+          "CinemaManager.DBModels": "1.0.0",
+          "CinemaManager.Storage": "1.0.0"
+        },
+        "runtime": {
+          "CinemaManager.Repositories.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "CinemaManager.Services/1.0.0": {
         "dependencies": {
-          "CinemaManager.DBModels": "1.0.0"
+          "CinemaManager.DBModels": "1.0.0",
+          "CinemaManager.DTOModels": "1.0.0",
+          "CinemaManager.Repositories": "1.0.0"
         },
         "runtime": {
           "CinemaManager.Services.dll": {
@@ -66,12 +90,12 @@
           }
         }
       },
-      "CinemaManager.ViewModels/1.0.0": {
+      "CinemaManager.Storage/1.0.0": {
         "dependencies": {
           "CinemaManager.DBModels": "1.0.0"
         },
         "runtime": {
-          "CinemaManager.ViewModels.dll": {
+          "CinemaManager.Storage.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -109,12 +133,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "CinemaManager.DTOModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CinemaManager.Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CinemaManager.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CinemaManager.ViewModels/1.0.0": {
+    "CinemaManager.Storage/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -2,8 +2,10 @@
   <Project Path="CinemaManager.Common/CinemaManager.Common.csproj" />
   <Project Path="CinemaManager.ConsoleApp/CinemaManager.ConsoleApp.csproj" />
   <Project Path="CinemaManager.DBModels/CinemaManager.DBModels.csproj" />
+  <Project Path="CinemaManager.DTOModels/CinemaManager.DTOModels.csproj" Id="b321c3ac-6393-4729-8409-9cc972b00f43" />
+  <Project Path="Cinemamanager.Repositories/CinemaManager.Repositories.csproj" Id="c4c22499-7e48-41fd-b2ff-ec0f75580d0b" />
   <Project Path="CinemaManager.Services/CinemaManager.Services.csproj" />
+  <Project Path="CinemaManager.Storage/CinemaManager.Storage.csproj" Id="81295399-7fc0-462f-baa9-68899e447d33" />
   <Project Path="CinemaManager.UI.WPF/CinemaManager.UI.WPF.csproj" Id="1f724dbf-dfea-4fae-b544-2c1b84005b8c" />
-  <Project Path="CinemaManager.ViewModels/CinemaManager.ViewModels.csproj" />
   <Project Path="CinemaManager/CinemaManager.csproj" Id="a715a790-064a-48fd-84df-8d77aa3df00c" />
 </Solution>
